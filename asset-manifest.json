@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/apollo-movie/static/js/main.81d17fa3.chunk.js",
+    "main.js.map": "/apollo-movie/static/js/main.81d17fa3.chunk.js.map",
+    "runtime-main.js": "/apollo-movie/static/js/runtime-main.50d1db5b.js",
+    "runtime-main.js.map": "/apollo-movie/static/js/runtime-main.50d1db5b.js.map",
+    "static/js/2.12c506d5.chunk.js": "/apollo-movie/static/js/2.12c506d5.chunk.js",
+    "static/js/2.12c506d5.chunk.js.map": "/apollo-movie/static/js/2.12c506d5.chunk.js.map",
+    "index.html": "/apollo-movie/index.html",
+    "static/js/2.12c506d5.chunk.js.LICENSE.txt": "/apollo-movie/static/js/2.12c506d5.chunk.js.LICENSE.txt",
+    "static/media/left_c.fdf1653c.jpg": "/apollo-movie/static/media/left_c.fdf1653c.jpg",
+    "static/media/loading.acbd807c.gif": "/apollo-movie/static/media/loading.acbd807c.gif",
+    "static/media/right_c.40e5dcc3.jpg": "/apollo-movie/static/media/right_c.40e5dcc3.jpg",
+    "static/media/theather.81741049.jpg": "/apollo-movie/static/media/theather.81741049.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50d1db5b.js",
+    "static/js/2.12c506d5.chunk.js",
+    "static/js/main.81d17fa3.chunk.js"
+  ]
+}
