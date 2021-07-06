@@ -1,76 +1,75 @@
-import React from "react";
-import gql from "graphql-tag";
-import { useQuery } from "@apollo/client";
+import React, { useState } from "react";
 import styled from "styled-components";
-import Movie from "../components/Movie";
+import Navigation from "../components/Navigation";
 
-const GET_MOVIES = gql`
-    {
-        movies {
-            id
-            medium_cover_image
-        }
-    }
-`
+import theather from "../assets/theather.jpg"
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin: auto;
+  height: 100vh;
+  background-color: grey;
 `;
-const Header = styled.header`
-  background-image: linear-gradient(-45deg, #d754ab, #fd723a);
-  height: 45vh;
-  color: white;
+
+const Body = styled.div`
+  background-image: url(${theather});
+  background-size: cover;
+  background-position: center;
+  margin-top: 5vh;
+  height: 100vh;
+  width: 100%;
+`;
+
+const BodyOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgb(17,17,17, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-`;
-const Title = styled.h1`
-  font-size: 60px;
-  font-weight: 600;
-  margin-bottom: 20px;
-`;
-const Subtitle = styled.h3`
-  font-size: 35px;
-`;
-const Loading = styled.div`
-  font-size: 18px;
-  opacity: 0.5;
-  font-weight: 500;
-  margin-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
-const Movies = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 25px;
-  width: 60%;
-  position: relative;
-  top: -50px;
+const Title = styled.div`
+  color: white;
+  font-size: 50px;
 `;
 
+const SubTitle = styled.div`
+  color: white;
+  font-size: 30px;
+  padding: 5vh;
+`;
 
-
+const StartButton = styled.button`
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 200px;
+  height: 70px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  margin: 0 20px;
+`;
 
 const Home = () => {
-    const { loading, data } = useQuery(GET_MOVIES);
+  const [showGenres, setShowGenres] = useState(null);
     return (
       <Container>
-        <Header>
-          <Title>Movie Flex</Title>
-          {/* <Subtitle>I love GraphQL</Subtitle> */}
-          {console.log(loading, data)}
-        </Header>
-        {loading && <Loading>Loading...</Loading>}
-
-        <Movies>
-          {data?.movies?.map(m => (
-            <Movie key={m.id} id={m.id} bg={m.medium_cover_image} />
-          ))}
-        </Movies>
+        <Navigation showGenresFromHome = {showGenres}/>
+        <Body>
+          <BodyOverlay>
+            <Title>Not Sure What to Watch Next?</Title>
+            <SubTitle>Choose genres, get recomendation and and watch trailors.</SubTitle>
+            <StartButton onClick={()=> setShowGenres(true)}>{`Get Started >>`}</StartButton>
+          </BodyOverlay>
+        </Body>
       </Container>
     );
 }

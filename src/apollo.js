@@ -4,7 +4,7 @@ const cashe = new InMemoryCache();
 
 const client = new ApolloClient({
     cache: cashe,
-    uri: "http://localhost:4000/"
+    uri: "http://movie-ql.herokuapp.com/"
 })
 
 export default client
