@@ -7,4 +7,4 @@ const client = new ApolloClient({
     uri: "https://movie-ql.herokuapp.com/"
 })
 
-export default client
+export default client;
